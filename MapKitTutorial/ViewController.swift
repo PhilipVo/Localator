@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         
         // locationManage setup:
         locationManager.delegate = self;
-        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.distanceFilter = 5;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.pausesLocationUpdatesAutomatically = false
         

@@ -75,29 +75,29 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         location.mapItem().openInMapsWithLaunchOptions(launchOptions)
     }
     
-    // 1. user enter region
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        alertsLabel.text = "Entered"
-        let alertController = UIAlertController(title: "Disclaimer", message:
-            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
-        monitoredRegions[region.identifier] = NSDate()
-    }
-    
-    // 2. user exit region
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        alertsLabel.text = "Exited"
-        let alertController = UIAlertController(title: "Disclaimer", message:
-            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
-        monitoredRegions.removeValueForKey(region.identifier)
-    }
+//    // 1. user enter region
+//    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        alertsLabel.text = "Entered"
+//        let alertController = UIAlertController(title: "Disclaimer", message:
+//            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+//        alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default,handler: nil))
+//        
+//        self.presentViewController(alertController, animated: true, completion: nil)
+//        
+//        monitoredRegions[region.identifier] = NSDate()
+//    }
+//    
+//    // 2. user exit region
+//    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+//        alertsLabel.text = "Exited"
+//        let alertController = UIAlertController(title: "Disclaimer", message:
+//            "Hello, world!", preferredStyle: UIAlertControllerStyle.Alert)
+//        alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default,handler: nil))
+//        
+//        self.presentViewController(alertController, animated: true, completion: nil)
+//        
+//        monitoredRegions.removeValueForKey(region.identifier)
+//    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let distance = locations.last!.distanceFromLocation(friends[0].location)
